@@ -1,323 +1,465 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samuel Kouřil — Software Engineer</title>
-  <meta name="description" content="Personal portfolio of Samuel Kouřil — Software Engineer turning coffee into code. Explore projects, skills, and get in touch.">
-  <meta property="og:title" content="Samuel Kouřil — Software Engineer">
-  <meta property="og:description" content="Personal portfolio of Samuel Kouřil — Software Engineer turning coffee into code.">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0c1117">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="index.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samuel Kouřil — Software Engineer</title>
+    <meta
+      name="description"
+      content="Kinetic portfolio of Samuel Kouřil — Software Engineer turning coffee into code. Explore iOS, full-stack .NET, and F1 telemetry projects."
+    />
+    <meta property="og:title" content="Samuel Kouřil — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Kinetic portfolio of Samuel Kouřil — Software Engineer turning coffee into code."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://samuelkouril.com/" />
+    <link rel="canonical" href="https://samuelkouril.com/" />
+    <meta name="theme-color" content="#090a0f" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- CRT Scan-line Overlay -->
-  <div class="crt-overlay" aria-hidden="true"></div>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="pointer-halo" aria-hidden="true"></div>
+    <div class="noise-layer" aria-hidden="true"></div>
 
-  <!-- CRT Toggle -->
-  <button class="crt-toggle" aria-label="Toggle CRT effect">[CRT: ON]</button>
+    <!-- Top Bar: 3-zone contract -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#top" class="brand-wordmark">Samuel Kouřil</a>
 
-  <!-- Tab Bar Navigation -->
-  <nav class="tab-bar" role="navigation" aria-label="Main navigation">
-    <div class="tab-items">
-      <button class="tab-item active" data-section="hero">[0:~]</button>
-      <button class="tab-item" data-section="about">[1:about]</button>
-      <button class="tab-item" data-section="projects">[2:projects]</button>
-      <button class="tab-item" data-section="skills">[3:skills]</button>
-      <button class="tab-item" data-section="contact">[4:contact]</button>
-    </div>
-    <div class="tab-bar-status">samuel@portfolio:~</div>
-  </nav>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
 
-  <!-- ===== HERO ===== -->
-  <section id="hero">
-    <div class="terminal-window" style="opacity:1;transform:none;">
-      <div class="terminal-header">
-        <div class="terminal-dots">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="terminal-title">samuel@portfolio — bash</div>
-      </div>
-      <div class="terminal-body">
-        <div class="boot-log" id="boot-log">
-          <!-- Boot lines injected by JS -->
-        </div>
-      </div>
-    </div>
-    <div class="hero-reveal">
-      <h1 class="hero-name" id="hero-name">Samuel Kouřil</h1>
-      <p class="hero-tagline" id="hero-tagline">Software Engineer · Turning coffee into code</p>
-      <a href="#about" class="hero-cta" id="hero-cta">$ explore --portfolio</a>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="section">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <div class="terminal-dots">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="terminal-title">~/about</div>
-      </div>
-      <div class="terminal-body">
-        <div class="prompt-line" data-prompt="$ cat about.md">
-          <span class="prompt-prefix">$ </span><span class="prompt-text">cat about.md</span>
-        </div>
-        <div class="about-content">
-          <p>
-            Hey — I'm Samuel. I'm currently studying <span class="highlight">Software Engineering at UTB</span> in Zlín, Czech Republic, and I build software that works well, reads well, and doesn't break at 3 AM.
-          </p>
-          <p>
-            I gravitate toward the full stack but spend most of my time where architecture decisions actually matter: the boundary between systems, the shape of an API, the data flow that makes or breaks a product. I care about <span class="highlight">clean abstractions</span>, <span class="highlight">testable code</span>, and <span class="highlight">shipping things people actually use</span>.
-          </p>
-          <p>
-            Next up: an internship at <span class="highlight">St. Mary's University in San Antonio, Texas</span> — looking forward to building things on the other side of the Atlantic.
-          </p>
-          <p>
-            When I'm not writing code, I'm probably reading about it, brewing espresso, or tinkering with some side project that may or may not see the light of day.
-          </p>
+        <div class="header-actions">
+          <a href="#contact" class="btn btn-primary header-cta">Get in Touch</a>
+          <button
+            type="button"
+            class="mobile-menu-btn"
+            id="mobile-menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-nav-panel"
+            aria-label="Toggle navigation menu"
+          >
+            Menu
+          </button>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <div class="terminal-dots">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="terminal-title">~/projects</div>
+      <div id="mobile-nav-panel" class="mobile-nav-panel" hidden>
+        <nav class="mobile-nav-list" aria-label="Mobile navigation">
+          <a href="#projects" class="mobile-nav-link">Projects</a>
+          <a href="#about" class="mobile-nav-link">About</a>
+          <a href="#skills" class="mobile-nav-link">Skills</a>
+          <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
       </div>
-      <div class="terminal-body">
-        <div class="prompt-line" data-prompt="$ ls -la ~/projects/">
-          <span class="prompt-prefix">$ </span><span class="prompt-text">ls -la ~/projects/</span>
-        </div>
+    </header>
 
-        <div class="project-list">
-          <div class="project-listing-header">total 3</div>
-
-          <!-- Project 1: IronTrack -->
-          <div class="project-entry" data-project="workout-tracker">
-            <div class="project-file-line">
-              <span class="project-permissions">drwxr-xr-x</span>
-              <span class="project-date">Apr 2026</span>
-              <span class="project-name-col">Workout-Tracker/</span>
-            </div>
-            <div class="project-details">
-              <div class="project-cat-line">$ cat Workout-Tracker/README.md</div>
-              <p class="project-desc">
-                IronTrack — a native iOS workout tracker built with SwiftUI and SwiftData.
-                Create custom routines and exercises, and during active sessions it
-                automatically shows your max weight and reps from last time for
-                instant progress tracking. MVVM architecture, fully local-first. ⭐ 11 stars.
+    <main id="main-content">
+      <!-- HERO SECTION -->
+      <section id="top" class="hero-section">
+        <div class="container">
+          <div class="hero-split">
+            <div class="hero-copy">
+              <p class="hero-kicker">
+                Zlín, Czech Republic · St. Mary's University, TX
               </p>
-              <div class="project-tech">
-                <span class="tech-tag">Swift</span>
-                <span class="tech-tag">SwiftUI</span>
-                <span class="tech-tag">SwiftData</span>
-                <span class="tech-tag">MVVM</span>
-                <span class="tech-tag">iOS</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/godblessamki/Workout-Tracker" target="_blank" rel="noopener">→ source</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: OrderingSystemMenza -->
-          <div class="project-entry" data-project="ordering-system">
-            <div class="project-file-line">
-              <span class="project-permissions">drwxr-xr-x</span>
-              <span class="project-date">Feb 2026</span>
-              <span class="project-name-col">OrderingSystemMenza/</span>
-            </div>
-            <div class="project-details">
-              <div class="project-cat-line">$ cat OrderingSystemMenza/README.md</div>
-              <p class="project-desc">
-                UTB.Minute — a full-stack university canteen ordering system.
-                .NET 10 Minimal APIs backend with Blazor WebAssembly frontend,
-                Keycloak authentication, real-time SSE updates via System.Threading.Channels,
-                and concurrency-safe ordering with EF Core + PostgreSQL.
-                Orchestrated with .NET Aspire.
+              <h1 class="hero-headline">Samuel Kouřil</h1>
+              <p class="hero-lead">
+                Software Engineer turning coffee into code. Currently studying at UTB in Zlín and building resilient full-stack systems, local-first iOS apps, and Formula 1 telemetry tools that don't break at 3 AM.
               </p>
-              <div class="project-tech">
-                <span class="tech-tag">C#</span>
-                <span class="tech-tag">.NET 10</span>
-                <span class="tech-tag">Blazor WASM</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">Keycloak</span>
-                <span class="tech-tag">.NET Aspire</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Mofrus/OrderingSystemMenza" target="_blank" rel="noopener">→ source</a>
+              <div class="hero-cta-row">
+                <a href="#projects" class="btn btn-primary">Explore Selected Works</a>
+                <a
+                  href="https://github.com/godblessamki"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-secondary"
+                >
+                  GitHub Profile
+                </a>
               </div>
             </div>
+
+            <aside class="hero-stage" aria-label="Interactive engineering architecture visualizer">
+              <div class="stage-toolbar">
+                <div class="stage-mode-group" role="tablist" aria-label="Engineering domain preview">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    class="stage-mode-btn is-active"
+                    data-canvas-mode="ios"
+                  >
+                    iOS · SwiftUI
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    class="stage-mode-btn"
+                    data-canvas-mode="distributed"
+                  >
+                    .NET 10
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    class="stage-mode-btn"
+                    data-canvas-mode="telemetry"
+                  >
+                    F1 Python
+                  </button>
+                </div>
+
+                <button
+                  type="button"
+                  id="canvas-motion-toggle"
+                  class="stage-motion-btn"
+                  aria-pressed="false"
+                >
+                  Pause Motion
+                </button>
+              </div>
+
+              <div class="canvas-frame">
+                <canvas
+                  id="kinetic-canvas"
+                  class="kinetic-canvas"
+                  data-testid="kinetic-canvas"
+                  aria-label="Interactive kinetic telemetry field"
+                ></canvas>
+              </div>
+
+              <div class="stage-readout">
+                <div>
+                  <h2 class="stage-readout-title" id="stage-readout-title">
+                    IronTrack Local-First Engine
+                  </h2>
+                  <p class="stage-readout-caption" id="stage-readout-caption">
+                    Deterministic previous-set recall with zero network latency on the gym floor.
+                  </p>
+                </div>
+                <div class="stage-readout-metric">
+                  <span class="stage-readout-label" id="stage-readout-label">Architecture</span>
+                  <span class="stage-readout-value" id="stage-readout-value">MVVM + SwiftData</span>
+                </div>
+              </div>
+            </aside>
           </div>
 
-          <!-- Project 3: F1DataCompare -->
-          <div class="project-entry" data-project="f1-data">
-            <div class="project-file-line">
-              <span class="project-permissions">drwxr-xr-x</span>
-              <span class="project-date">Apr 2025</span>
-              <span class="project-name-col">F1DataCompare/</span>
+          <!-- Full-Width 4-Column Proof Strip -->
+          <div class="metrics-strip" aria-label="Portfolio key metrics">
+            <div class="metric-cell">
+              <p class="metric-number">03</p>
+              <p class="metric-label">Shipped Systems</p>
+              <p class="metric-detail">iOS, Full-Stack &amp; F1 Telemetry</p>
             </div>
-            <div class="project-details">
-              <div class="project-cat-line">$ cat F1DataCompare/README.md</div>
-              <p class="project-desc">
-                Formula 1 telemetry and race data comparison tool.
-                Analyze and visualize performance metrics across drivers,
-                sessions, and seasons using real F1 data.
+            <div class="metric-cell">
+              <p class="metric-number">11</p>
+              <p class="metric-label">GitHub Stars</p>
+              <p class="metric-detail">IronTrack Native iOS</p>
+            </div>
+            <div class="metric-cell">
+              <p class="metric-number">05</p>
+              <p class="metric-label">Core Languages</p>
+              <p class="metric-detail">Python, Swift, C#, TS, SQL</p>
+            </div>
+            <div class="metric-cell">
+              <p class="metric-number">02</p>
+              <p class="metric-label">Continents</p>
+              <p class="metric-detail">UTB Zlín to San Antonio, TX</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARQUEE DIVIDER -->
+      <div class="marquee-band" aria-hidden="true">
+        <div class="marquee-track">
+          <span class="marquee-item">Selected Works · Clean Abstractions · Testable Code · Full-Stack Architecture · Native iOS · F1 Telemetry ·</span>
+          <span class="marquee-item">Selected Works · Clean Abstractions · Testable Code · Full-Stack Architecture · Native iOS · F1 Telemetry ·</span>
+        </div>
+      </div>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="section-block">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="section-index">01. Selected Works</p>
+              <h2 class="section-title">Shipped Engineering Systems</h2>
+              <p class="section-subtitle">
+                Three production-minded builds spanning native SwiftUI persistence, distributed .NET 10 ordering, and Formula 1 race telemetry.
               </p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Data Analysis</span>
-                <span class="tech-tag">F1 API</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/godblessamki/F1DataCompare" target="_blank" rel="noopener">→ source</a>
-              </div>
+            </div>
+
+            <div class="filter-bar" role="group" aria-label="Filter projects by category">
+              <button type="button" class="filter-btn is-active" data-project-filter="all" aria-pressed="true">
+                All Works
+              </button>
+              <button type="button" class="filter-btn" data-project-filter="ios" aria-pressed="false">
+                iOS &amp; Mobile
+              </button>
+              <button type="button" class="filter-btn" data-project-filter="fullstack" aria-pressed="false">
+                Full-Stack
+              </button>
+              <button type="button" class="filter-btn" data-project-filter="data" aria-pressed="false">
+                Data &amp; Python
+              </button>
             </div>
           </div>
+
+          <p class="projects-status-line" id="projects-status-line" aria-live="polite">
+            Showing 3 of 3 projects
+          </p>
+
+          <div class="projects-grid" id="projects-grid" data-testid="projects-grid"></div>
+
+          <div class="empty-projects" id="projects-empty" hidden>
+            <p class="project-summary">No projects match this filter.</p>
+            <button type="button" class="btn btn-secondary" id="reset-project-filter">
+              Reset Filter
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="section-block">
+        <div class="container">
+          <div class="about-grid">
+            <div>
+              <p class="section-index">02. Background &amp; Philosophy</p>
+              <h2 class="section-title">Built to Hold Up at 3 AM</h2>
+
+              <ul class="milestones-list" aria-label="Education and engineering milestones">
+                <li class="milestone-row">
+                  <span class="milestone-date">Current</span>
+                  <span class="milestone-title">B.Sc. Software Engineering</span>
+                  <span class="milestone-place">Tomas Bata University (UTB) · Zlín, Czech Republic</span>
+                </li>
+                <li class="milestone-row">
+                  <span class="milestone-date">Next Up</span>
+                  <span class="milestone-title">Software Engineering Internship</span>
+                  <span class="milestone-place">St. Mary's University · San Antonio, Texas</span>
+                </li>
+                <li class="milestone-row">
+                  <span class="milestone-date">Focus</span>
+                  <span class="milestone-title">System Boundaries, APIs &amp; Data Flow</span>
+                  <span class="milestone-place">Clean abstractions · Testable code · Real users</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="about-prose">
+              <p>
+                Hey — I'm Samuel. I'm currently studying <strong>Software Engineering at UTB</strong> in Zlín, Czech Republic, and I build software that works well, reads well, and doesn't break at 3 AM.
+              </p>
+              <p>
+                I gravitate toward the full stack but spend most of my time where architecture decisions actually matter: the boundary between systems, the shape of an API, the data flow that makes or breaks a product. I care about <strong>clean abstractions</strong>, <strong>testable code</strong>, and <strong>shipping things people actually use</strong>.
+              </p>
+              <p>
+                Next up: an internship at <strong>St. Mary's University in San Antonio, Texas</strong> — looking forward to building things on the other side of the Atlantic.
+              </p>
+              <p>
+                When I'm not writing code, I'm probably reading about it, brewing espresso, or tinkering with some side project that may or may not see the light of day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="section-block">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="section-index">03. Technical Stack</p>
+              <h2 class="section-title">Languages, Frameworks &amp; Craft</h2>
+            </div>
+
+            <div class="filter-bar" role="group" aria-label="Filter skills by discipline">
+              <button type="button" class="filter-btn is-active" data-skill-filter="all" aria-pressed="true">
+                All Stack
+              </button>
+              <button type="button" class="filter-btn" data-skill-filter="languages" aria-pressed="false">
+                Languages
+              </button>
+              <button type="button" class="filter-btn" data-skill-filter="mobile" aria-pressed="false">
+                Mobile
+              </button>
+              <button type="button" class="filter-btn" data-skill-filter="backend" aria-pressed="false">
+                Backend
+              </button>
+              <button type="button" class="filter-btn" data-skill-filter="frontend" aria-pressed="false">
+                Frontend
+              </button>
+              <button type="button" class="filter-btn" data-skill-filter="tools" aria-pressed="false">
+                Tools &amp; Interests
+              </button>
+            </div>
+          </div>
+
+          <div class="skills-layout">
+            <div class="skills-grid" id="skills-grid" data-testid="skills-grid"></div>
+
+            <div class="runtime-strip">
+              <span>Developer Profile · Samuel Kouřil</span>
+              <span>Session Uptime: <strong class="runtime-value" id="uptime-value">00:00:00</strong></span>
+              <span>Caffeine Reserve: <strong class="runtime-value">80% Espresso</strong></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="section-block">
+        <div class="container">
+          <div class="contact-grid">
+            <div>
+              <p class="section-index">04. Contact</p>
+              <h2 class="section-title">Start a Conversation</h2>
+              <p class="contact-lead">Reach out — I don't byte.</p>
+              <p class="contact-copy">
+                Whether it's a project, an opportunity, or just a question — drop me a line. I'll get back to you faster than npm install.
+              </p>
+              <a href="mailto:samuel.kouril@email.cz" class="btn btn-primary">
+                Send an Email
+              </a>
+            </div>
+
+            <div>
+              <ul class="contact-channel-list" aria-label="Direct contact channels">
+                <li class="contact-channel-item">
+                  <div>
+                    <span class="contact-channel-label">GitHub</span>
+                    <a
+                      href="https://github.com/godblessamki"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contact-channel-link"
+                    >
+                      github.com/godblessamki
+                    </a>
+                  </div>
+                  <a
+                    href="https://github.com/godblessamki"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                  >
+                    Open
+                  </a>
+                </li>
+
+                <li class="contact-channel-item">
+                  <div>
+                    <span class="contact-channel-label">Instagram</span>
+                    <a
+                      href="https://www.instagram.com/godblessamki/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="contact-channel-link"
+                    >
+                      instagram.com/godblessamki
+                    </a>
+                  </div>
+                  <a
+                    href="https://www.instagram.com/godblessamki/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                  >
+                    Open
+                  </a>
+                </li>
+
+                <li class="contact-channel-item">
+                  <div>
+                    <span class="contact-channel-label">Email</span>
+                    <a href="mailto:samuel.kouril@email.cz" class="contact-channel-link">
+                      samuel.kouril@email.cz
+                    </a>
+                  </div>
+                  <button type="button" class="btn btn-secondary" id="copy-email-btn">
+                    Copy Email
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Built with &lt;/&gt; and too much caffeine · © 2026 Samuel Kouřil</span>
+        <span>Zlín, Czech Republic · San Antonio, TX</span>
+      </div>
+    </footer>
+
+    <!-- Case Study Lightbox Dialog -->
+    <dialog id="case-study-modal" class="case-dialog" aria-labelledby="modal-project-title">
+      <div class="dialog-inner">
+        <div class="dialog-header">
+          <div>
+            <p class="project-meta-line" id="modal-project-meta"></p>
+            <h2 class="project-title" id="modal-project-title"></h2>
+          </div>
+          <button type="button" class="dialog-close" id="modal-close-btn" aria-label="Close case study">
+            ✕
+          </button>
+        </div>
+
+        <div class="project-visual" id="modal-project-visual"></div>
+
+        <p class="project-summary" id="modal-project-summary"></p>
+
+        <div>
+          <h3 class="milestone-title">Architecture &amp; System Decisions</h3>
+          <p class="project-summary" id="modal-project-architecture"></p>
+        </div>
+
+        <div>
+          <h3 class="milestone-title">Key Highlights</h3>
+          <ul class="dialog-list" id="modal-project-highlights"></ul>
+        </div>
+
+        <p class="project-stack-line" id="modal-project-tech"></p>
+
+        <div class="project-actions">
+          <a
+            id="modal-source-link"
+            href="https://github.com/godblessamki"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            View Source on GitHub
+          </a>
+          <button type="button" class="btn btn-secondary" id="modal-done-btn">Close</button>
         </div>
       </div>
-    </div>
-  </section>
+    </dialog>
 
-  <!-- ===== SKILLS (Neofetch) ===== -->
-  <section id="skills" class="section">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <div class="terminal-dots">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="terminal-title">~/skills</div>
-      </div>
-      <div class="terminal-body">
-        <div class="prompt-line" data-prompt="$ neofetch">
-          <span class="prompt-prefix">$ </span><span class="prompt-text">neofetch</span>
-        </div>
-
-        <div class="neofetch-container">
-          <div class="neofetch-ascii">
-<pre>
-    ██████╗ ██╗  ██╗
-   ██╔════╝ ██║ ██╔╝
-   ╚█████╗  █████╔╝
-    ╚═══██╗ ██╔═██╗
-   ██████╔╝ ██║  ██╗
-   ╚═════╝  ╚═╝  ╚═╝
-</pre>
-          </div>
-          <div class="neofetch-info">
-            <div class="neofetch-title">samuel@developer</div>
-            <div class="neofetch-title-underline">------------------</div>
-
-            <div class="neofetch-line">
-              <span class="neofetch-label">OS:</span>
-              <span class="neofetch-value">Developer v2.0 (stable)</span>
-            </div>
-            <div class="neofetch-line">
-              <span class="neofetch-label">Languages:</span>
-              <span class="neofetch-value">Python, Swift, C#, TypeScript, SQL</span>
-            </div>
-            <div class="neofetch-line">
-              <span class="neofetch-label">Mobile:</span>
-              <span class="neofetch-value">SwiftUI, SwiftData, React Native</span>
-            </div>
-            <div class="neofetch-line">
-              <span class="neofetch-label">Backend:</span>
-              <span class="neofetch-value">.NET Aspire, Python, PostgreSQL</span>
-            </div>
-            <div class="neofetch-line">
-              <span class="neofetch-label">Frontend:</span>
-              <span class="neofetch-value">HTML, CSS, JavaScript, React</span>
-            </div>
-            <div class="neofetch-line">
-              <span class="neofetch-label">Interests:</span>
-              <span class="neofetch-value">iOS dev, Cryptography, F1 data</span>
-            </div>
-            <div class="neofetch-line">
-              <span class="neofetch-label">Tools:</span>
-              <span class="neofetch-value">Git, Xcode, VS Code</span>
-            </div>
-
-            <hr class="neofetch-separator">
-
-            <div class="neofetch-line">
-              <span class="neofetch-label">Uptime:</span>
-              <span class="neofetch-value" id="uptime-value">loading...</span>
-            </div>
-            <div class="neofetch-line">
-              <span class="neofetch-label">Caffeine:</span>
-              <span class="neofetch-value">████████░░ 80%</span>
-            </div>
-
-            <div class="neofetch-colors">
-              <span class="color-block"></span>
-              <span class="color-block"></span>
-              <span class="color-block"></span>
-              <span class="color-block"></span>
-              <span class="color-block"></span>
-              <span class="color-block"></span>
-              <span class="color-block"></span>
-              <span class="color-block"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <div class="terminal-dots">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="terminal-title">~/contact</div>
-      </div>
-      <div class="terminal-body">
-        <div class="prompt-line" data-prompt='$ mail -s "Hello" samuel'>
-          <span class="prompt-prefix">$ </span><span class="prompt-text">mail -s "Hello" samuel</span>
-        </div>
-
-        <div class="contact-prompt">Reach out — I don't byte.</div>
-
-        <div class="contact-links">
-          <div class="contact-link-line">
-            <span class="contact-arrow">→</span>
-            <a href="https://github.com/godblessamki" target="_blank" rel="noopener">github.com/godblessamki</a>
-          </div>
-          <div class="contact-link-line">
-            <span class="contact-arrow">→</span>
-            <a href="https://www.instagram.com/godblessamki/" target="_blank" rel="noopener">instagram.com/godblessamki</a>
-          </div>
-          <div class="contact-link-line">
-            <span class="contact-arrow">→</span>
-            <a href="mailto:samuel.kouril@email.cz">samuel.kouril@email.cz</a>
-          </div>
-        </div>
-
-        <div class="contact-message">
-          <p>Whether it's a project, an opportunity, or just a question — drop me a line.<br>
-          I'll get back to you faster than <span class="text-green">npm install</span>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>built with <span class="text-green">&lt;/&gt;</span> and too much caffeine · © 2026 Samuel Kouřil</p>
-  </footer>
-
-  <script src="index.js"></script>
-</body>
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>
